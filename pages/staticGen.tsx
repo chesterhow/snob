@@ -39,8 +39,12 @@ export const getStaticProps: GetStaticProps = async () => {
   const response = await notion.databases.retrieve({
     database_id: databaseId,
   });
-  const tastingNotes = response.properties['Tasting Notes'].multi_select.options;
+  const property = response.properties['Tasting Notes'];
 
+  if (property.type !== 'multi_select') {
+    return { props: { tastingNotes: [] } };
+  }
+  const tastingNotes = property.multi_select.options;
   return { props: { tastingNotes } };
 }
 
