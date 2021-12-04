@@ -1,8 +1,9 @@
-import type { GetServerSideProps, NextPage } from "next";
 import { Client } from '@notionhq/client';
+import { GetDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+
 import { shuffle } from '../utils/shuffle';
-import { GetDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 
 interface Props {
   tastingNotes: any[];
@@ -20,7 +21,9 @@ const SSR: NextPage<Props> = (props) => {
       <main>
         <h1>Server-side Rendering</h1>
         <h3>Tasting Notes</h3>
-        {tastingNotes.map((note) => <p key={note.id}>{note.name}</p>)}
+        {tastingNotes.map((note) => (
+          <p key={note.id}>{note.name}</p>
+        ))}
       </main>
     </div>
   );
@@ -40,6 +43,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   const tastingNotes = shuffle(property.multi_select.options);
   return { props: { tastingNotes: tastingNotes.slice(0, 3) } };
-}
+};
 
 export default SSR;

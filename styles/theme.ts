@@ -6,7 +6,7 @@ export interface Theme {
 const theme: Theme = {
   colors: {
     primary: '#fff',
-  }
+  },
 };
 
 export default theme;

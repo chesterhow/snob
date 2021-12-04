@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const StyledLink = styled.a`
@@ -19,14 +19,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <Link href="staticGen" passHref><StyledLink>Static Generation</StyledLink></Link>
-        <Link href="ssr" passHref><StyledLink>Server-side Rendering</StyledLink></Link>
+        <Link href="staticGen" passHref>
+          <StyledLink>Static Generation</StyledLink>
+        </Link>
+        <Link href="ssr" passHref>
+          <StyledLink>Server-side Rendering</StyledLink>
+        </Link>
       </main>
 
-      <footer>
-      </footer>
+      <footer></footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
