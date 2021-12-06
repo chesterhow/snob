@@ -1,5 +1,12 @@
 import Head from 'next/head';
 import React from 'react';
+import styled from 'styled-components';
+
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 const Layout: React.FC = function (props) {
   const { children } = props;
@@ -12,7 +19,9 @@ const Layout: React.FC = function (props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>{children}</main>
+      <main>
+        <PageWrapper>{children}</PageWrapper>
+      </main>
 
       <footer></footer>
     </>
