@@ -12,10 +12,6 @@ interface Props {
   tastingNotes: any[];
 }
 
-const Title = styled.h3`
-  text-align: center;
-`;
-
 const TastingNotesWrapper = styled.div`
   flex-grow: 1;
   display: grid;
@@ -29,12 +25,15 @@ const TastingNote = styled.div<{ $color?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 2rem;
   background: ${(props) => props.$color};
   color: #fff;
   text-align: center;
-  font-size: 5rem;
-  font-weight: 200;
-  letter-spacing: -0.2rem;
+
+  h1 {
+    margin: 0;
+    font-weight: 200;
+  }
 `;
 
 const Home: NextPage<Props> = (props) => {
@@ -74,11 +73,10 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <Layout>
-      <Title>snob</Title>
       <TastingNotesWrapper>
         {randomNotes.map((note) => (
           <TastingNote key={note.id} $color={getColor(note.color)}>
-            <span>{note.name}</span>
+            <h1>{note.name}</h1>
           </TastingNote>
         ))}
       </TastingNotesWrapper>
