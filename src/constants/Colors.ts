@@ -12,14 +12,14 @@ export const NotionColors = {
 };
 
 export const AppColors = {
-  [NotionColors.default]: '#9A8C98',
-  [NotionColors.gray]: '#424C55',
-  [NotionColors.brown]: '#6A3E37',
-  [NotionColors.orange]: '#BA5C12',
-  [NotionColors.yellow]: '#F3C677',
-  [NotionColors.green]: '#6A994E',
-  [NotionColors.blue]: '#2D5D7B',
-  [NotionColors.purple]: '#422040',
-  [NotionColors.pink]: '#EF709D',
-  [NotionColors.red]: '#753742',
+  [NotionColors.default]: 'hsl(60, 5%, 70%)',
+  [NotionColors.gray]: 'hsl(60, 5%, 50%)',
+  [NotionColors.brown]: 'hsl(30, 30%, 50%)',
+  [NotionColors.orange]: 'hsl(25, 80%, 60%)',
+  [NotionColors.yellow]: 'hsl(43, 80%, 60%)',
+  [NotionColors.green]: 'hsl(100, 55%, 60%)',
+  [NotionColors.blue]: 'hsl(210, 80%, 60%)',
+  [NotionColors.purple]: 'hsl(270, 50%, 60%)',
+  [NotionColors.pink]: 'hsl(320, 60%, 60%)',
+  [NotionColors.red]: 'hsl(0, 60%, 60%)',
 };

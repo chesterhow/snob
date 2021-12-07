@@ -1,10 +1,11 @@
 import { Client } from '@notionhq/client';
+import convert from 'color-convert';
 import type { GetStaticProps, NextPage } from 'next';
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
-import { AppColors } from '../constants/Colors';
+import { AppColors, NotionColors } from '../constants/Colors';
 import useKeyDown from '../hooks/useKeyDown';
 import { shuffle } from '../utils/shuffle';
 
