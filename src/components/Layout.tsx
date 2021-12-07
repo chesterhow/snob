@@ -2,12 +2,17 @@ import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 
+import Footer from './Footer';
 import Nav from './Nav';
 
 const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+`;
+
+const Main = styled.main`
+  flex-grow: 1;
 `;
 
 const Layout: React.FC = function (props) {
@@ -21,14 +26,13 @@ const Layout: React.FC = function (props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <PageWrapper>
-          <Nav />
-          {children}
-        </PageWrapper>
-      </main>
+      <PageWrapper>
+        <Nav />
 
-      <footer></footer>
+        <Main>{children}</Main>
+
+        <Footer />
+      </PageWrapper>
     </>
   );
 };

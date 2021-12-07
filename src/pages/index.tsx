@@ -1,11 +1,10 @@
 import { Client } from '@notionhq/client';
-import convert from 'color-convert';
 import type { GetStaticProps, NextPage } from 'next';
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/Layout';
-import { AppColors, NotionColors } from '../constants/Colors';
+import { AppColors } from '../constants/Colors';
 import useKeyDown from '../hooks/useKeyDown';
 import { shuffle } from '../utils/shuffle';
 
@@ -14,20 +13,19 @@ interface Props {
 }
 
 const TastingNotesWrapper = styled.div`
-  flex-grow: 1;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  // align-items: center;
   justify-content: stretch;
+  height: 100%;
   width: 100%;
 `;
 
-const TastingNote = styled.div<{ $color?: string }>`
+const TastingNote = styled.div<{ $background?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
-  background: ${(props) => props.$color};
+  padding: 1rem 3rem;
+  background: ${(props) => props.$background};
   color: #fff;
   text-align: center;
 
@@ -76,7 +74,7 @@ const Home: NextPage<Props> = (props) => {
     <Layout>
       <TastingNotesWrapper>
         {randomNotes.map((note) => (
-          <TastingNote key={note.id} $color={getColor(note.color)}>
+          <TastingNote key={note.id} $background={getColor(note.color)}>
             <h1>{note.name}</h1>
           </TastingNote>
         ))}
