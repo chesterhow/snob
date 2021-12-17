@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import Instructions from '../components/Instructions';
 import Layout from '../components/Layout';
 import { AppColors } from '../constants/Colors';
 import useKeyDown from '../hooks/useKeyDown';
@@ -13,10 +14,10 @@ interface Props {
 }
 
 const TastingNotesWrapper = styled.div`
+  flex-grow: 1;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   justify-content: stretch;
-  height: 100%;
   width: 100%;
 `;
 
@@ -26,12 +27,20 @@ const TastingNote = styled.div<{ $background?: string }>`
   justify-content: center;
   padding: 1rem 3rem;
   background: ${(props) => props.$background};
-  color: #fff;
+  color: ${(props) => props.theme.colors.primary};
   text-align: center;
 
   h1 {
     margin: 0;
     font-weight: 200;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakPoints.lg}) {
+    padding: 1rem 2.5rem;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakPoints.md}) {
+    padding: 1rem 2rem;
   }
 `;
 
@@ -57,11 +66,6 @@ const Home: NextPage<Props> = (props) => {
     getRandomNotes();
   }, [keyPressed, getRandomNotes]);
 
-  // Randomise on button click
-  const handleClick = () => {
-    getRandomNotes();
-  };
-
   const getColor = (color: Notion.Color | undefined) => {
     if (!color) {
       return AppColors.default;
@@ -79,7 +83,7 @@ const Home: NextPage<Props> = (props) => {
           </TastingNote>
         ))}
       </TastingNotesWrapper>
-      {/* <button onClick={handleClick}>Randomise</button> */}
+      <Instructions onRandomiseClick={getRandomNotes} />
     </Layout>
   );
 };

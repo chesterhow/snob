@@ -2,7 +2,6 @@ import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
 
-import Footer from './Footer';
 import Nav from './Nav';
 
 const PageWrapper = styled.div`
@@ -13,6 +12,8 @@ const PageWrapper = styled.div`
 
 const Main = styled.main`
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Layout: React.FC = function (props) {
@@ -31,7 +32,7 @@ const Layout: React.FC = function (props) {
 
         <Main>{children}</Main>
 
-        <Footer />
+        <footer></footer>
       </PageWrapper>
     </>
   );

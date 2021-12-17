@@ -7,11 +7,19 @@ const GlobalStyle = createGlobalStyle`
 
   html,
   body {
-    font-family: ${(props) => props.theme.font.serif};
-    font-size: 20px;
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: ${(props) => props.theme.font.serif};
+    font-size: 20px;
+
+    @media (max-width: ${(props) => props.theme.breakPoints.md}) {
+      font-size: 18px;
+    }
+
+    @media (max-width: ${(props) => props.theme.breakPoints.sm}) {
+      font-size: 16px;
+    }
   }
 
   html {
@@ -27,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: ${(props) => props.theme.fontScale.xxxl};
     letter-spacing: -0.05em;
+
+    @media (max-width: ${(props) => props.theme.breakPoints.md}) {
+      font-size: ${(props) => props.theme.fontScale.xxl};
+    }
   }
 
   h2 {
