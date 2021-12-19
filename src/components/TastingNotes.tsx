@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ViewContext from '../contexts/ViewContext';
 import useKeyDown from '../hooks/useKeyDown';
 import { shuffle } from '../utils/shuffle';
+import AuraView from './AuraView';
 import ColorsView from './ColorsView';
 import Instructions from './Instructions';
 
@@ -45,7 +46,7 @@ const TastingNotes: React.FC<Props> = function (props) {
         {viewContext?.view === 'colors' ? (
           <ColorsView randomNotes={randomNotes} />
         ) : (
-          <div>aura</div>
+          <AuraView randomNotes={randomNotes} />
         )}
       </Wrapper>
       <Instructions onRandomiseClick={getRandomNotes} />
