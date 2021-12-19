@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+
+import ViewContext from '../contexts/ViewContext';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -27,10 +29,16 @@ const About = styled.p`
 `;
 
 const Nav: React.FC = function () {
+  const viewContext = useContext(ViewContext);
+
   return (
     <StyledNav>
       <Title>Snob.</Title>
       <About>Random tasting notes from real coffees.</About>
+      <button onClick={() => viewContext?.setView('colors')}>
+        Colors View
+      </button>
+      <button onClick={() => viewContext?.setView('aura')}>Aura View</button>
     </StyledNav>
   );
 };
