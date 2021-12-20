@@ -28,8 +28,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background: ${(props) => props.theme.colors.primary};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    > div {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   h1 {

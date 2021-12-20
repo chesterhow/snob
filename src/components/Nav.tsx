@@ -44,6 +44,7 @@ const ToggleButton = styled.button<{ $isActive?: boolean }>`
   border: 0;
   border-radius: 5px;
   background: none;
+  color: ${(props) => props.theme.colors.black};
   font-size: ${(props) => props.theme.fontScale.md};
   font-family: ${(props) => props.theme.font.sansSerif};
   font-weight: 500;
