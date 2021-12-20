@@ -50,6 +50,7 @@ const Button = styled.button`
   ${KeyStyles}
   padding: 0.3rem 0.5rem;
   background: none;
+  color: ${(props) => props.theme.colors.black};
   font-size: ${(props) => props.theme.fontScale.md};
   cursor: pointer;
 `;

@@ -17,7 +17,7 @@ const TastingNote = styled.div<{ $background?: string }>`
   justify-content: center;
   padding: 1rem 3rem;
   background: ${(props) => props.$background};
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.white};
   text-align: center;
 
   h1 {

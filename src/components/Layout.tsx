@@ -9,6 +9,8 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background: ${(props) => props.theme.colors.primary};
+  overflow: auto;
 `;
 
 const Main = styled.main`

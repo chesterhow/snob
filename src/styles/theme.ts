@@ -1,6 +1,7 @@
 export interface Theme {
   colors: {
     primary: string;
+    white: string;
     black: string;
     grey: string;
   };
@@ -28,7 +29,8 @@ export interface Theme {
 }
 const theme: Theme = {
   colors: {
-    primary: '#fff',
+    primary: '#f8f4f1',
+    white: '#fff',
     black: '#000',
     grey: '#999',
   },
