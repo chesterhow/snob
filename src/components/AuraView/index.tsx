@@ -25,7 +25,6 @@ const Text = styled.h4`
 
 const Frame = styled.div`
   position: relative;
-  // max-height: 500px;
   width: 400px;
   max-width: 100%;
   aspect-ratio: 3 / 4;
